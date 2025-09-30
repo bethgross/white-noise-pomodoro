@@ -8,4 +8,4 @@ Sometimes I time my breaks, so included a 5 minute timer for that (no white nois
 
 Sometimes I won't want white noise, so I included an on/off toggle.
 
-![What the app looks like](pomodoro_app.jpg)
+![What the app looks like](pomodoro.jpg)
