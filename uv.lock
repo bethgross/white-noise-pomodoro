@@ -60,6 +60,15 @@ wheels = [
 ]
 
 [[package]]
+name = "colour"
+version = "0.1.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/a0/d4/5911a7618acddc3f594ddf144ecd8a03c29074a540f4494670ad8f153efe/colour-0.1.5.tar.gz", hash = "sha256:af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee", size = 24776, upload-time = "2017-11-19T23:20:08.015Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/74/46/e81907704ab203206769dee1385dc77e1407576ff8f50a0681d0a6b541be/colour-0.1.5-py2.py3-none-any.whl", hash = "sha256:33f6db9d564fadc16e59921a56999b79571160ce09916303d35346dddc17978c", size = 23772, upload-time = "2017-11-19T23:20:04.56Z" },
+]
+
+[[package]]
 name = "numpy"
 version = "2.3.3"
 source = { registry = "https://pypi.org/simple" }
@@ -147,16 +156,30 @@ wheels = [
 ]
 
 [[package]]
+name = "tkmacosx"
+version = "1.0.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "colour" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8d/f7/3bf185485e95dd5a85f04a3576c6e76e7d4b81078e42484f076e596edd38/tkmacosx-1.0.5.tar.gz", hash = "sha256:d4719ec27121b7e7f381efd9c5484966fab64e62685c2d24d1f1f5fd888d90b6", size = 87405, upload-time = "2022-05-27T21:08:40.503Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/69/22/412542b886110116830eae2ebc9b193b7b622b12318882a04816cdd8a3bf/tkmacosx-1.0.5-py3-none-any.whl", hash = "sha256:106de675ee308a57a05409313cbd4c0845737f7b1f18a5094e7e402ea8154d9c", size = 73091, upload-time = "2022-05-27T21:08:38.927Z" },
+]
+
+[[package]]
 name = "white-noise-pomodoro"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "numpy" },
     { name = "sounddevice" },
+    { name = "tkmacosx" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "numpy" },
     { name = "sounddevice" },
+    { name = "tkmacosx", specifier = ">=1.0.5" },
 ]

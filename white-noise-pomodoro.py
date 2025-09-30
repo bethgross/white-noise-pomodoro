@@ -6,6 +6,11 @@ import numpy as np
 import sounddevice as sd
 import tkinter as tk
 
+try:
+    from tkmacosx import Button as MacOSButton
+except ImportError:  # pragma: no cover - fallback when dependency missing
+    MacOSButton = tk.Button
+
 
 POMODORO_DURATION_SECONDS = 25 * 60
 SHORT_BREAK_DURATION_SECONDS = 5 * 60
@@ -64,7 +69,7 @@ class PomodoroApp:
         self.root = tk.Tk()
         self.root.title("White Noise Pomodoro")
         self.root.configure(bg="black")
-        self.root.geometry("320x260")
+        self.root.geometry("320x320")
         self.root.resizable(width=False, height=False)
 
         self.timer_var = tk.StringVar(value="00:00")
@@ -94,40 +99,54 @@ class PomodoroApp:
         button_frame = tk.Frame(self.root, bg="black")
         button_frame.pack(pady=12)
 
-        self.pomodoro_button = tk.Button(
+        pomodoro_kwargs = dict(
+            fg="#0A0A0A",
+            bg="#89CFF0",
+            activebackground="#6FBDE9",
+            activeforeground="#0A0A0A",
+            relief="flat",
+            padx=20,
+            pady=12,
+            font=("Helvetica Neue", 14),
+            borderwidth=0,
+            highlightthickness=0,
+        )
+        if MacOSButton is not tk.Button:
+            pomodoro_kwargs.update(borderless=1, focuscolor="")
+
+        self.pomodoro_button = MacOSButton(
             button_frame,
             text="Start Pomodoro",
             command=self.start_pomodoro,
-            fg="white",
-            bg="#222",
-            activebackground="#333",
-            activeforeground="white",
-            relief="flat",
-            padx=20,
-            pady=12,
-            font=("Helvetica Neue", 14),
-            borderwidth=0,
+            **pomodoro_kwargs,
         )
         self.pomodoro_button.pack(fill="x", pady=6)
 
-        self.break_button = tk.Button(
-            button_frame,
-            text="Start Break",
-            command=self.start_break,
-            fg="white",
-            bg="#222",
-            activebackground="#333",
-            activeforeground="white",
+        break_kwargs = dict(
+            fg="#0A0A0A",
+            bg="#89CFF0",
+            activebackground="#6FBDE9",
+            activeforeground="#0A0A0A",
             relief="flat",
             padx=20,
             pady=12,
             font=("Helvetica Neue", 14),
             borderwidth=0,
+            highlightthickness=0,
+        )
+        if MacOSButton is not tk.Button:
+            break_kwargs.update(borderless=1, focuscolor="")
+
+        self.break_button = MacOSButton(
+            button_frame,
+            text="Start Break",
+            command=self.start_break,
+            **break_kwargs,
         )
         self.break_button.pack(fill="x", pady=6)
 
         toggle_frame = tk.Frame(self.root, bg="black")
-        toggle_frame.pack(pady=(8, 0))
+        toggle_frame.pack(pady=(8, 16))
 
         self.white_noise_toggle = tk.Checkbutton(
             toggle_frame,
