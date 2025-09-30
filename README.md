@@ -2,7 +2,7 @@
 
 ## What is it?
 
-This is a simple timer that plays white noise for 25 minutes then "dings" at the end. I time my breaks, so included a 5 minute timer for that (no white noise). Sometimes, I don't want white noise, so I included an on/off toggle. Some timers exist that auto-play the break but I find that feature annoying because I like to finish something  
+This is a simple timer that plays white noise for 25 minutes then "dings" at the end. I time my breaks, so included a 5 minute timer for that (no white noise). Sometimes, I don't want white noise, so I included an on/off toggle. Similar timers will auto-play the break, but I find that feature annoying.   
 
 
 ## Why did I make it?
