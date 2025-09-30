@@ -1,11 +1,20 @@
 # Pomodoro timer with white noise
 
-I like working with pomodoro timers and I like working with white noise. So here's both. 
+## What is it?
 
-This is a simple timer that plays white noise for 25 minutes then "dings" at the end.
+This is a simple timer that plays white noise for 25 minutes then "dings" at the end. I time my breaks, so included a 5 minute timer for that (no white noise). Sometimes, I don't want white noise, so I included an on/off toggle. Some timers exist that auto-play the break but I find that feature annoying because I like to finish something  
 
-Sometimes I time my breaks, so included a 5 minute timer for that (no white noise). 
 
-Sometimes I won't want white noise, so I included an on/off toggle.
+## Why did I make it?
 
-![What the app looks like](pomodoro.jpg)
+Mainly for practice. I vibe-coded it with GitHub Copilot then made my own adjustments. 
+
+But also:
+
+1. I like using pomodoro timers while I work
+2. I like working with white noise
+
+## What does it look like? 
+
+<a href="url"><img src="pomodoro.jpg" align="left" height="320" width="320" ></a>
+
